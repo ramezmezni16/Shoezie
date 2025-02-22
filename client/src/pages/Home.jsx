@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 const backgroundImage = '/assets/background.jpg';
 
 const Home = () => {
@@ -72,9 +73,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-center py-8">
-        <p>&copy; 2025 Shoezie. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
