@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="bg-black text-white">
       {/* Full-page Welcome Section */}
       <section className="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-8xl md:text-7xl font-bold mb-6">Welcome to Shoezie</h1>
+        <h1 className="text-8xl md:text-7xl font-bold mb-6">
+          Welcome to <span className="text-yellow-300">Shoezie</span>
+        </h1>
         <p className="text-xl md:text-2xl text-gray-400 mb-8">Step into style, walk in comfort.</p>
         <div className="space-x-4">
           <Link
@@ -67,8 +69,8 @@ const Home = () => {
         <p>&copy; 2025 Shoezie. All rights reserved.</p>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 const CategoryCard = ({ title, image, link }) => (
   <Link to={link} className="group">
@@ -83,14 +85,13 @@ const CategoryCard = ({ title, image, link }) => (
       </div>
     </div>
   </Link>
-)
+);
 
 const FeatureCard = ({ title, description }) => (
   <div className="bg-gray-800 p-6 rounded-lg text-center">
     <h3 className="text-xl font-semibold mb-4">{title}</h3>
     <p className="text-gray-400">{description}</p>
   </div>
-)
+);
 
-export default Home
-
+export default Home;
