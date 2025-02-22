@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const CartPage = () => {
-  // Temporary cart items (replace with state)
   const cartItems = [
     { id: 1, name: 'Nike Air Max', price: 120, quantity: 1, image: 'https://via.placeholder.com/100' },
     { id: 2, name: 'Adidas UltraBoost', price: 150, quantity: 1, image: 'https://via.placeholder.com/100' }
