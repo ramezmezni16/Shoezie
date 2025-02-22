@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
+const backgroundImage = '/assets/background.jpg';
 
 const Home = () => {
   return (
     <div className="bg-black text-white">
       {/* Full-page Welcome Section */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-8xl md:text-7xl font-bold mb-6">
-          Welcome to <span className="text-yellow-300">Shoezie</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-400 mb-8">Step into style, walk in comfort.</p>
-        <div className="space-x-4">
+      <section
+        className="h-screen flex flex-col justify-center items-center text-center px-4 bg-cover bg-center relative"
+        style={{
+          backgroundImage: `url(${backgroundImage})`, // Use the imported image
+        }}
+      >
+        {/* Faded black overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-90"></div> {/* Increased opacity */}
+
+        <h1 className="text-8xl md:text-7xl font-bold mb-6 z-10">Welcome to <span className="text-yellow-300">Shoezie</span></h1>
+        <p className="text-xl md:text-2xl text-gray-400 mb-8 z-10">Step into style, walk in comfort.</p>
+        <div className="space-x-4 z-10">
           <Link
             to="/signup"
             className="bg-yellow-300 text-black font-bold py-3 px-8 rounded-md hover:bg-yellow-600 transition-colors"
@@ -69,8 +76,8 @@ const Home = () => {
         <p>&copy; 2025 Shoezie. All rights reserved.</p>
       </footer>
     </div>
-  );
-};
+  )
+}
 
 const CategoryCard = ({ title, image, link }) => (
   <Link to={link} className="group">
@@ -85,13 +92,13 @@ const CategoryCard = ({ title, image, link }) => (
       </div>
     </div>
   </Link>
-);
+)
 
 const FeatureCard = ({ title, description }) => (
   <div className="bg-gray-800 p-6 rounded-lg text-center">
     <h3 className="text-xl font-semibold mb-4">{title}</h3>
     <p className="text-gray-400">{description}</p>
   </div>
-);
+)
 
 export default Home;
